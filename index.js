@@ -4,8 +4,8 @@ const { MongoClient } = require('mongodb');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 8080;
-const MONGODB_URI = "mongodb+srv://Yo_prada:Mges5OshwW4N2hCp@cluster0.kh4ct6q.mongodb.net/Docprompts";
+const PORT = process.env.PORT || 3000;
+const MONGODB_URI = process.env.MONGO_URI 
 
 // Middleware
 app.use(bodyParser.json());
