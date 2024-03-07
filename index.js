@@ -28,7 +28,7 @@ app.post('/post_topic', async (req, res) => {
         let similarTopicsFound = 0;
 
         for (const topicData of data) {
-            const { course_code, course_name, Topic, Used } = topicData;
+            const { course_code, course_name, Topic, Used, purpose, criteria} = topicData;
             if (!course_code || !course_name || !Topic) {
                 return res.status(400).json({ error: "Required fields missing" });
             }
@@ -45,6 +45,8 @@ app.post('/post_topic', async (req, res) => {
                 course_code,
                 course_name,
                 topic: Topic,
+                purpose: purpose,
+                criteria: criteria,
                 used: Used || false
             });
             totalTopicsPosted++;
